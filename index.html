@@ -4,10 +4,107 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Test</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+	<title>Xatpy · Pet projects</title>
+	<style>
+			* {
+		  margin: 0;
+		  padding: 0;
+		}
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+			
+			background-color: #EAEAEA;
+		}
+
+		h1 {
+			display: flex;
+			justify-content: center;
+			color: #E9B800;
+		}
+
+		#header {
+			flex-direction: column;
+			position:fixed
+			top:0;
+			left:0;
+			width:100%;
+			height:150px; /* change me */
+			display: flex;
+			align-items: center;
+	    	justify-content: center;
+		    font-size: 2em;
+		    font-weight: bold;
+		    background-color: #4F4C41;
+		    color: #E9B800;
+		}
+
+		#content {
+			background-color: #A0A09C;
+		}
+
+		.flex-container {
+		    height: 90%;
+		    padding: 0;
+		    margin: 0;
+		    display: -webkit-box;
+		    display: -moz-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.row {
+		    width: 100%;
+	        justify-content: center;
+	    	display: flex;
+		}
+		.flex-item {
+		    width: 70%;
+		    height: 100%;
+		    /*line-height: 20px;*/
+		    font-weight: bold;
+		    font-size: 2.5em;
+		    text-align: center;
+		}
+		.links {
+			margin: 10px;
+			justify-content: space-around;
+			color: white;
+		}
+		.mainGradientBackground {
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eaeaea+0,e0e0e0+47,d1d1d1+100 */
+			background: rgb(234,234,234); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(234,234,234,1) 0%, rgba(224,224,224,1) 47%, rgba(209,209,209,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba(234,234,234,1) 0%,rgba(224,224,224,1) 47%,rgba(209,209,209,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba(234,234,234,1) 0%,rgba(224,224,224,1) 47%,rgba(209,209,209,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#d1d1d1',GradientType=0 ); /* IE6-9 */
+
+		}
+	</style>
 </head>
 <body>
-	test
+	<div id="header">
+	    <div class="row"> 
+	        <h1>Xatpy · Pet projects</h1>
+	    </div>
+	    <div class="row links"> 
+	        <h5>Github</h5>
+	        <h5>Twitter</h5>
+	        <h5>Web</h5>
+	        <h5>Blog</h5>
+	    </div>
+	</div>
+
+	<div class="flex-container">
+	    <div class="row"> 
+	        <div class="flex-item"> <span id="phrase">/*Grid pet projects.*/</span></div>
+	    </div>
+	</div>
+
+	</div>
 </body>
 </html>
