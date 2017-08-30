@@ -22,7 +22,7 @@ h1 {
 	position:fixed
 	top:0;
 	left:0;
-	width:100%;
+	width: auto;
 	height:150px; /* change me */
 	display: flex;
 	align-items: center;
@@ -37,8 +37,9 @@ h1 {
 
 #content {
 	margin: auto;
-    width: 100%;
-    padding: 10px;
+    width: auto;
+    padding-top: 10px;
+    cursor:crosshair;
 }
 
 .flex-container {
@@ -56,13 +57,13 @@ h1 {
     justify-content: center;
 }
 .row {
-    width: 100%;
+    width: auto;
     justify-content: center;
 	display: flex;
 }
 .flex-item {
     width: 70%;
-    height: 100%;
+    height: auto;
     /*line-height: 20px;*/
     font-weight: bold;
     font-size: 2.5em;
@@ -81,6 +82,11 @@ h1 {
 
 	-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+}
+
+.subheader:hover {
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.9);;
 }
 
 .title {
@@ -119,6 +125,7 @@ h1 {
 	border-radius: 66px;
 	border: 2px solid rgba(255, 255, 255, 0.65);
 	padding: 2px;
+	font-style: italic;
 }
 
 .tableProjects td:hover {
@@ -131,14 +138,25 @@ h1 {
 
   	#header {
 	    font-size: medium;
+	    height: 110px;
+	}
+
+	.tableProject {
+		border-spacing: 1px;
 	}
 
 	.projectLanguage {
-		font-size: medium;
+		font-size: x-small;
 	}
 
 	.projectName {
-		font-size: small;
+		font-size: xx-small;
+		padding: 5px;
+	}
+
+	h5 {
+		margin-right: 10px;
+		margin-left: 10px;
 	}
 
 }
