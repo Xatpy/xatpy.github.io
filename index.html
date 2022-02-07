@@ -1,104 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Xatpy · Pet projects</title>
+	<title>GIFfing</title>
+	<link href="./assets/iconfinder_icon-65-file-gif_315666.png" rel="icon" type="image/x-icon" />
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="GIFfing">
+	<meta property="og:description" content="Random gifs in full screen">
+	<meta property="og:image" content="https://raw.githubusercontent.com/Xatpy/giffing/master/assets/metaShare.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="986">
+	<meta property="og:image:height" content="564">
+	<meta property="og:url" content="https://xatpy.github.io/giffing/">
+	<meta name="twitter:card" content="Random gifs in full screen">
+	<meta property="og:site_name" content="GIFfing">
+	<meta name="twitter:image:alt" content="Random gifs in full screen">
 
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@chapi13" />
-	<meta name="twitter:title" content="Xatpy pet projects" />
-	<meta name="twitter:description" content="Xatpy pet projects collection." />
-	<meta name="twitter:image" content="https://raw.githubusercontent.com/Xatpy/xatpy.github.io/master/thumb.png" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<style>
+	* {background-color: black;}
+	body, html {
+	    height: 100%;
+	    margin: 0;
+	}
 
-	<meta name="description" content="Xatpy pet projects" />
-	<meta name="keywords" content="javascrip python c++ pet project" />
-
-	<meta name="author" content="xatpy" />
-	<meta name="copyright" content="" />
-	<meta name="application-name" content="Xatpy pet projects" />
-
-	<meta property="og:title" content="Xatpy pet projects" />
-	<meta property="og:type" content="article" />
-	<meta property="og:image" content="https://raw.githubusercontent.com/Xatpy/xatpy.github.io/master/thumb.png" />
-	<meta property="og:image:type" content="image/png" />
-	<meta property="og:image:width" content="1202" />
-	<meta property="og:image:height" content="1958" />
-	<meta property="og:url" content="https://xatpy.github.io/" />
-	<meta property="og:description" content="Xatpy pet projects" />
-
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="shortcut icon" href="./favicon.ico" >
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+	.randomImg {
+		border: 10px solid #f3f500;
+	}
+	</style>
 </head>
 
 <body>
-	<div id="header">
-	    <div class="row"> 
-	        <h1>👾 Xatpy · Pet projects</h1>
-	    </div>
-	    <div class="row links"> 
-	        <h5><a href="https://www.github.com/xatpy" target="_blank" class="subheader">🔗 Github</a></h5>
-	        <h5><a href="https://www.twitter.com/chapi13" target="_blank" class="subheader">🔗 Twitter</a></h5>
-	        <h5><a href="http://www.jaimechapinal.com" target="_blank" class="subheader">🔗 Web</a></h5>
-	        <h5><a href="http://www.jaimechapinal.com/blog" target="_blank" class="subheader"> 🔗Blog</a></h5>
-	    </div>
-	</div>
-
-	<div id="content">
-
-		<table class="tableProjects">
-			<tr>
-				<td class="projectLanguage">Javascript</td>
-				<td class="projectLanguage">Python</td>
-				<td class="projectLanguage">Unity3D</td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="https://xatpy.github.io/SoundsTable/LaVidaModerna/" target="_blank">Sounds table (La Vida Moderna)</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/Scraping" target="_blank">Scraping</a></td>
-				<td class="projectName"><a href="https://xatpy.github.io/LD36_Aqueducts/index.html" target="_blank">LD36_Aqueducts</td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="http://xatpy.github.io/XPerimentJS/" target="_blank">XperimentJS</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/OpenPenalty" target="_blank">OpenPenalty</a></td>
-				<td class="projectName"><a href="http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=65533" target="_blank">LD34_Between Buttons</a></td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="https://github.com/Xatpy/autogif" target="_blank">autogif</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/telegramBots" target="_blank">TelegramBots</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/AngryMoto" target="_blank">Angry Moto</a></td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="https://xatpy.github.io/APPrecidos-razonables-liga-santander/" target="_blank">APPrecidos-razonables</a></td>
-				<td class="projectLanguage">C++</td>
-				<td class="projectName"><a href="https://github.com/Xatpy/WeddingGamers" target="_blank">Wedding Gamers</a></td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="https://remotesounds.herokuapp.com/" target="_blank">RemoteSounds</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/geOSG" target="_blank">geOSG</a></td>
-				<td class="projectLanguage">HTML / CSS</td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="http://xatpy.github.io/colorfulSnake/" target="_blank">colorfulSnake</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/AutoCamCapture" target="_blank">AutoCamCapture</a></td>
-				<td class="projectName"><a href="http://www.hotel-antonio.com/" target="_blank">Hotel Antonio (Conil de la Frontera)</a></td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="https://github.com/Xatpy/StravaToCartoDB" target="_blank">StravaToCartoDB</a></td>
-				<td class="projectLanguage">Talks</td>
-				<td class="projectName"><a href="http://www.jaimechapinal.com/" target="_blank">JaimeChapinal.com</a></td>
-			</tr>
-			<tr>
-				<td class="projectName"><a href="https://xatpy.github.io/googlyEyesFy/" target="_blank">googlyEyesFy</a></td>
-				<td class="projectName"><a href="https://github.com/Xatpy/Freakend" target="_blank">Freakend</a></td>
-			<td></td>
-			</tr>
-			</table>
-
-	</div>
+	<div id="main" class="result"></div>
+	
+	<script>
+		const PUBLIC_KEY = 'dc6zaTOxFJmzC';
+		const BASE_URL = '//api.giphy.com/v1/gifs/';
+		const ENDPOINT = 'search';
+		const LIMIT = 1;
+		const RATING = 'pg';
+	
+		let KEY_SEARCH = "Dwight Schrute";
+	
+		let $resultWrapper = $('.result');
+	
+		let autoRandom = false;
+		var refreshIntervalId;
+	
+		let query = {
+		  text: null,
+		  offset: 0,
+		  request() {
+			return `${BASE_URL}${ENDPOINT}?q=${this.text}&limit=${LIMIT}&rating=${RATING}&offset=${this.offset}&api_key=${PUBLIC_KEY}`;
+		  },
+		  fetch(callback) {
+			$.getJSON(this.request())
+			  .success(data => {
+				let results = data.data;
+				
+				if (results.length) {
+				  let url = results[0].images.downsized.url;
+				  callback(url);
+				} else {
+					callback('');
+					gifNotFound();
+				}
+			  })
+			  .fail(error => {
+				console.error(error);
+			  });
+		  }
+		}
+	
+		function gifNotFound() {
+			document.body.style.backgroundColor = "red";
+			console.error("Not results found");
+		}
+	
+		function buildImg(src = '//giphy.com/embed/xv3WUrBxWkUPC', classes = 'gif hidden') {
+			return `<img src="${src}" class="${classes}" alt="gif" style="width:100%; height: 100%"/>`;
+		}
+	
+		function clickImage() {
+			query.offset = Math.floor(Math.random() * 25);
+			query.fetch(url => {
+				if (url.length) {
+				  $resultWrapper.html(buildImg(url));
+				}
+			});
+		}
+	
+		function find() {
+			$('.gif').addClass('hidden');
+			query.text = KEY_SEARCH;
+			  query.offset = Math.floor(Math.random() * 25);
+			if (query.text && query.text.length) {
+				  query.fetch(url => {
+				if (url.length) {
+					  $resultWrapper.html(buildImg(url));
+				}
+			  });
+			}
+		  }
+	
+		function getKeySearch() {
+			var url = new URL(window.location.href);
+			var key = url.searchParams.get("key");
+			if (key) {
+				KEY_SEARCH = key;
+			}
+		}
+	
+		function notFound() {
+			key = "fail";
+			find();
+		}
+	
+		function activateAuto() {
+			refreshIntervalId = window.setInterval(function(){
+				find();
+			}, 1500);
+		}
+	
+		function interaction(e) {
+			e = e || window.event; 
+			  var charCode = e.charCode || e.keyCode;
+			  if ((charCode == 65 || charCode == 82 || charCode == 73) && !autoRandom) {
+				  //a = 65 // r = 82 // i = 73
+				  activateAuto();
+				  autoRandom = true;
+				  var element = document.getElementById("main");
+				element.classList.add("randomImg");
+			  } else {
+				  autoRandom = false;
+				  var element = document.getElementById("main");
+				element.classList.remove("randomImg");
+				clearInterval(refreshIntervalId);
+			  }
+			find();
+		}
+	
+		window.onload = function() {
+			getKeySearch();
+			find();
+		};
+		window.onkeydown = function(e) {
+			interaction(e);
+		}
+	
+		window.onmousedown = function (e) {
+			interaction(e);
+		}
+	</script>
 
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8801495871341198"
      crossorigin="anonymous"></script>
