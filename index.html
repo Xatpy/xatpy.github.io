@@ -1,159 +1,177 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>GIFfing</title>
-	<link href="./assets/iconfinder_icon-65-file-gif_315666.png" rel="icon" type="image/x-icon" />
+  <head>
+    <title>GIFfing</title>
+    <link
+      href="./assets/iconfinder_icon-65-file-gif_315666.png"
+      rel="icon"
+      type="image/x-icon"
+    />
 
-	<meta property="og:title" content="GIFfing">
-	<meta property="og:description" content="Random gifs in full screen">
-	<meta property="og:image" content="https://raw.githubusercontent.com/Xatpy/giffing/master/assets/metaShare.png">
-	<meta property="og:image:type" content="image/png">
-	<meta property="og:image:width" content="986">
-	<meta property="og:image:height" content="564">
-	<meta property="og:url" content="https://xatpy.github.io/giffing/">
-	<meta name="twitter:card" content="Random gifs in full screen">
-	<meta property="og:site_name" content="GIFfing">
-	<meta name="twitter:image:alt" content="Random gifs in full screen">
+    <meta property="og:title" content="GIFfing" />
+    <meta property="og:description" content="Random gifs in full screen" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/Xatpy/giffing/master/assets/metaShare.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="986" />
+    <meta property="og:image:height" content="564" />
+    <meta property="og:url" content="https://xatpy.github.io/giffing/" />
+    <meta name="twitter:card" content="Random gifs in full screen" />
+    <meta property="og:site_name" content="GIFfing" />
+    <meta name="twitter:image:alt" content="Random gifs in full screen" />
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<style>
-	* {background-color: black;}
-	body, html {
-	    height: 100%;
-	    margin: 0;
-	}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>
+      * {
+        background-color: black;
+      }
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
 
-	.randomImg {
-		border: 10px solid #f3f500;
-	}
-	</style>
-</head>
+      .randomImg {
+        border: 10px solid #f3f500;
+      }
+    </style>
+  </head>
 
-<body>
-	<div id="main" class="result"></div>
-	
-	<script>
-		const PUBLIC_KEY = 'dc6zaTOxFJmzC';
-		const BASE_URL = '//api.giphy.com/v1/gifs/';
-		const ENDPOINT = 'search';
-		const LIMIT = 1;
-		const RATING = 'pg';
-	
-		let KEY_SEARCH = "Dwight Schrute";
-	
-		let $resultWrapper = $('.result');
-	
-		let autoRandom = false;
-		var refreshIntervalId;
-	
-		let query = {
-		  text: null,
-		  offset: 0,
-		  request() {
-			return `${BASE_URL}${ENDPOINT}?q=${this.text}&limit=${LIMIT}&rating=${RATING}&offset=${this.offset}&api_key=${PUBLIC_KEY}`;
-		  },
-		  fetch(callback) {
-			$.getJSON(this.request())
-			  .success(data => {
-				let results = data.data;
-				
-				if (results.length) {
-				  let url = results[0].images.downsized.url;
-				  callback(url);
-				} else {
-					callback('');
-					gifNotFound();
-				}
-			  })
-			  .fail(error => {
-				console.error(error);
-			  });
-		  }
-		}
-	
-		function gifNotFound() {
-			document.body.style.backgroundColor = "red";
-			console.error("Not results found");
-		}
-	
-		function buildImg(src = '//giphy.com/embed/xv3WUrBxWkUPC', classes = 'gif hidden') {
-			return `<img src="${src}" class="${classes}" alt="gif" style="width:100%; height: 100%"/>`;
-		}
-	
-		function clickImage() {
-			query.offset = Math.floor(Math.random() * 25);
-			query.fetch(url => {
-				if (url.length) {
-				  $resultWrapper.html(buildImg(url));
-				}
-			});
-		}
-	
-		function find() {
-			$('.gif').addClass('hidden');
-			query.text = KEY_SEARCH;
-			  query.offset = Math.floor(Math.random() * 25);
-			if (query.text && query.text.length) {
-				  query.fetch(url => {
-				if (url.length) {
-					  $resultWrapper.html(buildImg(url));
-				}
-			  });
-			}
-		  }
-	
-		function getKeySearch() {
-			var url = new URL(window.location.href);
-			var key = url.searchParams.get("key");
-			if (key) {
-				KEY_SEARCH = key;
-			}
-		}
-	
-		function notFound() {
-			key = "fail";
-			find();
-		}
-	
-		function activateAuto() {
-			refreshIntervalId = window.setInterval(function(){
-				find();
-			}, 1500);
-		}
-	
-		function interaction(e) {
-			e = e || window.event; 
-			  var charCode = e.charCode || e.keyCode;
-			  if ((charCode == 65 || charCode == 82 || charCode == 73) && !autoRandom) {
-				  //a = 65 // r = 82 // i = 73
-				  activateAuto();
-				  autoRandom = true;
-				  var element = document.getElementById("main");
-				element.classList.add("randomImg");
-			  } else {
-				  autoRandom = false;
-				  var element = document.getElementById("main");
-				element.classList.remove("randomImg");
-				clearInterval(refreshIntervalId);
-			  }
-			find();
-		}
-	
-		window.onload = function() {
-			getKeySearch();
-			find();
-		};
-		window.onkeydown = function(e) {
-			interaction(e);
-		}
-	
-		window.onmousedown = function (e) {
-			interaction(e);
-		}
-	</script>
+  <body>
+    <div id="main" class="result"></div>
 
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8801495871341198"
-     crossorigin="anonymous"></script>
+    <script>
+      const PUBLIC_KEY = "Pfeii2ucy3KDI4hWFlKv9lt0CXYvNooG";
+      const BASE_URL = "//api.giphy.com/v1/gifs/";
+      const ENDPOINT = "search";
+      const LIMIT = 1;
+      const RATING = "pg";
 
-</body>
+      let KEY_SEARCH = "Dwight Schrute";
+
+      let $resultWrapper = $(".result");
+
+      let autoRandom = false;
+      var refreshIntervalId;
+
+      let query = {
+        text: null,
+        offset: 0,
+        request() {
+          return `${BASE_URL}${ENDPOINT}?q=${this.text}&limit=${LIMIT}&rating=${RATING}&offset=${this.offset}&api_key=${PUBLIC_KEY}`;
+        },
+        fetch(callback) {
+          $.getJSON(this.request())
+            .success((data) => {
+              let results = data.data;
+
+              if (results.length) {
+                let url = results[0].images.downsized.url;
+                callback(url);
+              } else {
+                callback("");
+                gifNotFound();
+              }
+            })
+            .fail((error) => {
+              console.error(error);
+            });
+        },
+      };
+
+      function gifNotFound() {
+        document.body.style.backgroundColor = "red";
+        console.error("Not results found");
+      }
+
+      function buildImg(
+        src = "//giphy.com/embed/xv3WUrBxWkUPC",
+        classes = "gif hidden"
+      ) {
+        return `<img src="${src}" class="${classes}" alt="gif" style="width:100%; height: 100%"/>`;
+      }
+
+      function clickImage() {
+        query.offset = Math.floor(Math.random() * 25);
+        query.fetch((url) => {
+          if (url.length) {
+            $resultWrapper.html(buildImg(url));
+          }
+        });
+      }
+
+      function find() {
+        $(".gif").addClass("hidden");
+        query.text = KEY_SEARCH;
+        query.offset = Math.floor(Math.random() * 25);
+        if (query.text && query.text.length) {
+          query.fetch((url) => {
+            if (url.length) {
+              $resultWrapper.html(buildImg(url));
+            }
+          });
+        }
+      }
+
+      function getKeySearch() {
+        var url = new URL(window.location.href);
+        var key = url.searchParams.get("key");
+        if (key) {
+          KEY_SEARCH = key;
+        }
+      }
+
+      function notFound() {
+        key = "fail";
+        find();
+      }
+
+      function activateAuto() {
+        refreshIntervalId = window.setInterval(function () {
+          find();
+        }, 1500);
+      }
+
+      function interaction(e) {
+        e = e || window.event;
+        var charCode = e.charCode || e.keyCode;
+        if (
+          (charCode == 65 || charCode == 82 || charCode == 73) &&
+          !autoRandom
+        ) {
+          //a = 65 // r = 82 // i = 73
+          activateAuto();
+          autoRandom = true;
+          var element = document.getElementById("main");
+          element.classList.add("randomImg");
+        } else {
+          autoRandom = false;
+          var element = document.getElementById("main");
+          element.classList.remove("randomImg");
+          clearInterval(refreshIntervalId);
+        }
+        find();
+      }
+
+      window.onload = function () {
+        getKeySearch();
+        find();
+      };
+      window.onkeydown = function (e) {
+        interaction(e);
+      };
+
+      window.onmousedown = function (e) {
+        interaction(e);
+      };
+    </script>
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8801495871341198"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
