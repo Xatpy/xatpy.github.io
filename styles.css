@@ -1,9 +1,49 @@
 * {
-  /* margin: 0;
-  padding: 0; */
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  width: 100%;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #c8cfb9;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
+
+header {
+  height: 15%;
+}
+
+main {
+  flex: auto;
+}
+
+footer {
+  height: 10%;
+}
+
+li {
+  list-style-type: none;
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.app {
+  width: 100%;
+}
+
+/* .app.mareas {
+  background-color: blue;
+}
+
+.app.xokas {
+  background-color: red;
+} */
