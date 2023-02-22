@@ -6,16 +6,24 @@
   width: 100%;
 }
 
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #c8cfb9;
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  background-color: #111111;
+  color: white;
 }
 
 header {
-  height: 15%;
+  height: 10%;
 }
 
 main {
@@ -30,16 +38,91 @@ li {
   list-style-type: none;
 }
 
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 20px;
+}
+
 .apps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+  gap: 1px;
 }
 
 .app {
   width: 100%;
 }
 
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  border-radius: 15px;
+  color: black;
+}
+
+.blackGrid {
+  background-color: #000000;
+  color: black;
+}
+
+.gridAliceBlue {
+  background-color: aliceblue;
+}
+
+.gridAntiqueBlue {
+  background-color: #faebd7;
+}
+
+.gridAzure {
+  background-color: #f0ffff;
+  color: black;
+}
+
+.gridBeige {
+  background-color: #f5f5dc;
+  color: black;
+}
+.gridDarkGrey {
+  background-color: #a9a9a9;
+}
+.gridDarkSlateGrey {
+  background-color: #2f4f4f;
+}
+.gridDimGray {
+  background-color: #696969;
+}
+.gridFloralWhite {
+  background-color: #fffaf0;
+  color: black;
+}
+.gridGainsboro {
+  background-color: #dcdcdc;
+  color: black;
+}
+.gridLavender {
+  background-color: #fff0f5;
+}
+.gridLightSlateGrey {
+  background-color: #778899;
+}
+.gridNavajoWhite {
+  background-color: #ffdead;
+}
+.gridSeaShell {
+  background-color: #fff5ee;
+}
+.gridHoneyDew {
+  background-color: #f0fff0;
+}
 /* .app.mareas {
   background-color: blue;
 }
